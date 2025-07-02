@@ -1,81 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>WX的主页</title>
-        <style>
-            body{
-                /*background-color:#11BBEE;*/
-                /*background-color: #33d3d3;*/
-                margin:0px;
-                background-image:url(picture/15.jpg);
-                background-size:100% 100%;
-                background-attachment: fixed;
-                /*background-image-z-index: -1;*/
-                background-repeat:no-repeat;
-            }
-            h1{
-                text-align:center;
-            }
-            div.a{
-                float:left;
-                position:relative;
-                left:50%;
- 
-            }
-            div.b {
- 
-                position: relative;
-                left: -50%;
- 
-            }
-            .center {
-                margin: auto;
-                width: 50%;
-            }
-            p{
-                font-size: 20px;
-            }
-        </style>
-    </head>
-    <body>
-        <audio controls autoplay loop id="vd" style="display: inline">
-            <source src="music/love.mp3" type="audio/mpeg">
-            您的浏览器不支持 audio 元素。
-        </audio>
-        <h1 style="text-align:center;margin-top:0;">WX的主页</h1>
- 
-        <div style="border-style: dashed;border-color: #00ccff;clear: both"></div>
-            <div class="a" style="margin-top: 25px">
-                <div class="b" style="">
-                    <div style="text-align: center">
-                        <a href="homework8.1.html"><img src="picture/20.jpg" style="border-radius:50%;width: 100px;height: 100px;"></a>
-                        <a href="homework8.2.html"><img src="picture/23.jpg" style="border-radius:50%;width: 100px;height: 100px;margin-left: 50px"></a>
-                        <a href="homework8.3.html"><img src="picture/24.jpg" style="border-radius:50%;width: 100px;height: 100px;margin-left: 50px"></a>
-                        <a href="homework8.4.html"><img src="picture/25.jpg" style="border-radius:50%;width: 100px;height: 100px;margin-left: 50px"></a>
-                        <br />
-                        <p style="display:inline;margin-left: -8px;">个人简介</p>
-                        <p style="display:inline;margin-left: 70px;">个人爱好</p>
-                        <p style="display:inline;margin-left: 70px;">个人成绩</p>
-                        <p style="display:inline;margin-left: 82px;">收藏夹:https://pan.baidu.com/s/1PhTeMkX5vOg0ZRcw0abjCw?pwd=yyds 提取码：yyds 
-</p>
-                        <p style="color: green;margin-top:5%;font-size: 22px;">点击对应图片即可跳转</p>
-                        <table style="">
-                            <tr>
-                                <td style="width: 400px">
-                                    <p style="display:inline;margin-left:-100px;color: red;text-shadow:2px 0px #43798d;font-size: 25px">"梦想与现实之间的距离叫行动"</p>
-                                    <p style="font-family:'Times New Roman';margin-left:-100px;color: red;font-style:italic;text-shadow:2px 0px #43798d;font-size: 25px">"The distance between a dream and a reality is called action"</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="width: 400px">
-                                    <p style="display:inline;color: blue;margin-left:-500px;text-shadow:2px 0px #43798d;font-size: 25px">"减少期待，调整心态"</p>
-                                    <p style="font-family:'Times New Roman';margin-left:-500px;color: blue;font-style:italic;text-shadow:2px 0px #43798d;font-size: 25px">"Reduce expectations and adjust your mindset"</p>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>首页</title>
+    <base target="_blank" />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        background-color: #f3f8fb;
+      }
+      .title {
+        height: 60px;
+        background: url(images/sz.png) no-repeat center center;
+      }
+      h1 {
+        text-align: center;
+        color: #666666;
+        font-size: 18px;
+        margin: 8px 0 15px 0;
+      }
+      .nav ul {
+        width: 1200px;
+        background-color: #012883;
+        margin: 0 auto;
+        text-align: center;
+        border-radius: 15px;
+        list-style: none;
+        margin-bottom: 20px;
+      }
+      .nav li {
+        display: inline-block;
+        width: 70px;
+        height: 50px;
+        line-height: 50px;
+        margin: 0 40px;
+      }
+      .nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+        display: block;
+      }
+      .nav li:hover {
+        background-color: #4e69a9;
+      }
+      .tv {
+        width: 1280px;
+        height: 400px;
+        overflow: hidden;
+        margin: 0 auto;
+        border-radius: 10px;
+      }
+      .screen {
+        width: 5120px;
+        animation: switch 8s ease-out infinite;
+      }
+      .screen > img {
+        width: 1280px;
+        height: 400px;
+        float: left;
+      }
+      @keyframes switch {
+        0%,
+        20% {
+          margin-left: 0;
+        }
+        25%,
+        45% {
+          margin-left: -1280px;
+        }
+        50%,
+        70% {
+          margin-left: -2560px;
+        }
+        75%,
+        100% {
+          margin-left: -3840px;
+        }
+      }
+      .content {
+        width: 1050px;
+        height: 330px;
+        margin: 15px auto;
+      }
+      .contentleft {
+        width: 750px;
+        height: 300px;
+        float: left;
+      }
+      .contentleft h4 {
+        margin-bottom: 10px;
+      }
+      .content .box1 {
+        width: 520px;
+        height: 300px;
+        float: left;
+      }
+
+      .box1 .box1top {
+        width: 500px;
+        height: 120px;
+        background-color: #fff;
+        padding: 10px;
+      }
+      .box1 .box1bottom {
+        width: 500px;
+        height: 120px;
+        background-color: #fff;
+        margin-top: 10px;
+        padding: 10px;
+      }
+      .photo {
+        width: 200px;
+        height: 120px;
+        float: left;
+        margin-right: 15px;
+      }
+      .photo > img {
+        width: 200px;
+        height: 120px;
+        border-radius: 10px;
+      }
+      .box1 p {
+        font-size: 14px;
+      }
+      .riqi {
+        font-size: 12px;
+        color: gray;
+        margin-top: 20px;
+      }
+      .box2 {
+        width: 180px;
+        height: 270px;
+        float: right;
+        padding: 10px;
+        background-color: #fff;
+      }
+      .box2 > img {
+        width: 180px;
+        height: 270px;
+        border-radius: 10px;
+      }
+      .contentright {
+        width: 260px;
+        height: 320px;
+        float: right;
+        background-color: #fff;
+        text-align: center;
+      }
+      .contentright h4 {
+        margin: 10px 0;
+        text-align: left;
+        margin-left: 15px;
+      }
+      .contentright > img {
+        width: 230px;
+        height: 130px;
+      }
+      .contentright table {
+        width: 160px;
+        height: 120px;
+        text-align: left;
+        margin-left: 15px;
+        font-size: 12px;
+      }
+      span {
+        color: #012883;
+      }
+      .footer {
+        width: 1060px;
+        margin: 0 auto;
+      }
+      .footer h4 {
+        margin-bottom: 20px;
+      }
+      .footer img {
+        width: 250px;
+        height: 200px;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+      }
+      .footer img:hover {
+        transform: translateY(-10px);
+      }
+      .zp {
+        width: 250px;
+        display: inline-block;
+        margin: 0 5px;
+        background-color: #fff;
+        border-radius: 10px;
+      }
+      .zp p {
+        font-size: 14px;
+        margin-left: 10px;
+        margin-bottom: 5px;
+      }
+      .donman {
+        width: 1050px;
+        margin: 10px auto;
+      }
+      .donman h4 {
+        margin: 20px 0;
+      }
+      .nav2 {
+        width: 1520px;
+        margin: 0 auto;
+        background-color: #111111;
+      }
+      .nav2 ul {
+        margin: 0 auto;
+        text-align: center;
+        list-style: none;
+      }
+      .nav2 li {
+        display: inline-block;
+        width: 60px;
+        height: 50px;
+        line-height: 50px;
+        margin: 0 13px;
+      }
+      .nav2 a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+        display: block;
+      }
+      .nav2 ~ p {
+        width: 1520px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        color: gray;
+        font-size: 12px;
+        background-color: black;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title"></div>
+    <h1>个 人 网 页</h1>
+    <div class="nav">
+      <ul>
+        <li><a href="首页.html">首页</a></li>
+        <li><a href="关于我.html">关于我</a></li>
+        <li><a href="心情随笔.html">心情随笔</a></li>
+        <li><a href="个人作品.html">个人作品</a></li>
+        <li><a href="留言板.html">留言板</a></li>
+      </ul>
+    </div>
+    <div class="tv">
+      <div class="screen">
+        <img src="images/bo1.jpg" alt="" />
+        <img src="images/bo2.jpg" alt="" />
+        <img src="images/bo3.jpg" alt="" />
+        <img src="images/bo4.jpg" alt="" />
+      </div>
+    </div>
+    <div class="content">
+      <div class="contentleft">
+        <h4>最新随笔</h4>
+        <div class="box1">
+          <div class="box1top">
+            <div class="photo">
+              <img src="images/b1.jpg" alt="" />
             </div>
-    </body>
+            <p>人生就是越努力越幸运！</p>
+            <p class="riqi">2021-12-19</p>
+          </div>
+          <div class="box1bottom">
+            <div class="photo">
+              <img src="images/b2.jpg" alt="" />
+            </div>
+            <p>"只有跑起来，才会有风"</p>
+            <p class="riqi">2021-12-19</p>
+          </div>
+        </div>
+        <div class="box2">
+          <img src="images/b3.jpg" alt="" />
+        </div>
+      </div>
+      <div class="contentright">
+        <h4>个人介绍</h4>
+        <img src="images/hnwlxy.jpg" alt="" />
+        <table>
+          <tr>
+            <td><span>姓名：</span></td>
+            <td>曹升权</td>
+          </tr>
+          <tr>
+            <td><span>学号：</span></td>
+            <td>21310102</td>
+          </tr>
+          <tr>
+            <td><span>班级：</span></td>
+            <td>软件工程2101班</td>
+          </tr>
+          <tr>
+            <td><span>学校：</span></td>
+            <td>湖南文理学院</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="footer">
+      <h4>个人作品</h4>
+      <div class="zp">
+        <img src="images/shuilian.jpg" alt="" />
+
+        <a href="MyBatis.pdf">MyBatis笔记</a>
+
+
+
+        <p>睡莲</p>
+      </div>
+      <div class="zp">
+        <img src="images/srxh.jpg" alt="" />
+        <a href="MyBatisPlus.pdf">MyBatisPlus.pdf</a>
+        <p>生如夏花</p>
+      </div>
+      <div class="zp">
+        <img src="images/p3.jpg" alt="" />
+        <a href="SpringMVC笔记.pdf">SpringMVC笔记.pdf</a>
+        <p>稻城亚丁</p>
+      </div>
+      <div class="zp">
+        <img src="images/p4.jpg" alt="" />
+        <a href="SSM整合.pdf">SSM整合.pdf</a>
+        <p>落日和渔船</p>
+      </div>
+    </div>
+
+    <div class="donman">
+      <h4>喜爱动漫</h4>
+      <video
+        src="video/吞噬星空.mp4"
+        controls
+        poster="images/luofen.jpg"
+        muted
+        width="1050px"
+      ></video>
+    </div>
+    <div class="nav2">
+      <ul>
+        <li><a href="#">关于我</a></li>
+        <li><a href="#">心情随笔</a></li>
+        <li><a href="#">个人作品</a></li>
+        <li><a href="#">留言板</a></li>
+      </ul>
+    </div>
+    <p>设计制作：个人网页</p>
+  </body>
 </html>
+
